@@ -77,12 +77,12 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 
 **목표**: RESTful API의 기본 패턴을 익힌다. 게시글(Post) 도메인으로 CRUD를 구현한다.
 
-- [ ] Post 엔티티 생성 (`id`, `title`, `content`, `createdAt`)
-- [ ] `POST /api/posts` - 게시글 생성
-- [ ] `GET /api/posts` - 게시글 목록 조회
-- [ ] `GET /api/posts/{id}` - 게시글 단건 조회
-- [ ] `PUT /api/posts/{id}` - 게시글 수정
-- [ ] `DELETE /api/posts/{id}` - 게시글 삭제
+- [x] Post 엔티티 생성 (`id`, `title`, `content`, `createdAt`)
+- [x] `POST /api/posts` - 게시글 생성
+- [x] `GET /api/posts` - 게시글 목록 조회
+- [x] `GET /api/posts/{id}` - 게시글 단건 조회
+- [x] `PUT /api/posts/{id}` - 게시글 수정
+- [x] `DELETE /api/posts/{id}` - 게시글 삭제
 
 **학습 키워드**: `@Entity`, `@Id`, `JpaRepository`, `@RequestBody`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`, HTTP 상태 코드 (200, 201, 404)
 
@@ -90,9 +90,9 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 
 **목표**: Controller - Service - Repository 3계층 구조를 이해한다.
 
-- [ ] `PostController` → `PostService` → `PostRepository` 분리
-- [ ] Request DTO / Response DTO 분리 (`CreatePostRequest`, `PostResponse`)
-- [ ] Service에서 비즈니스 로직 처리 (엔티티 ↔ DTO 변환)
+- [x] `PostController` → `PostService` → `PostRepository` 분리
+- [x] Request DTO / Response DTO 분리 (`CreatePostRequest`, `PostResponse`)
+- [x] Service에서 비즈니스 로직 처리 (엔티티 ↔ DTO 변환)
 
 **학습 키워드**: `@Service`, `@Repository`, DTO 패턴, 관심사의 분리, 의존성 주입(`@Autowired` vs 생성자 주입)
 
@@ -100,10 +100,10 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 
 **목표**: 에러를 체계적으로 처리하는 방법을 배운다.
 
-- [ ] 존재하지 않는 게시글 조회 시 404 응답
-- [ ] `@Valid`를 사용한 요청 데이터 검증 (제목 필수, 내용 최소 길이 등)
-- [ ] `@ExceptionHandler` / `@RestControllerAdvice`로 전역 예외 처리
-- [ ] 통일된 에러 응답 형식 정의 (`ErrorResponse`)
+- [x] 존재하지 않는 게시글 조회 시 404 응답
+- [x] `@Valid`를 사용한 요청 데이터 검증 (제목 필수, 내용 최소 길이 등)
+- [x] `@ExceptionHandler` / `@RestControllerAdvice`로 전역 예외 처리
+- [x] 통일된 에러 응답 형식 정의 (`ErrorResponse`)
 
 **학습 키워드**: `@Valid`, `@NotBlank`, `@Size`, `@RestControllerAdvice`, `@ExceptionHandler`, `ResponseEntity`
 
@@ -162,3 +162,16 @@ src/main/kotlin/com/practice/server/
         ├── GlobalExceptionHandler.kt
         └── ErrorResponse.kt
 ```
+
+---
+
+## 학습 문서
+
+각 Phase에서 배운 핵심 개념, 원칙, 프론트엔드 비유를 정리한 문서:
+
+| 문서 | 내용 |
+|------|------|
+| [Phase 1: REST 기초](docs/phase1-rest-basics.md) | @RestController, 요청 파라미터, JSON 응답 |
+| [Phase 2: CRUD 기초](docs/phase2-crud-basics.md) | Entity, JpaRepository, HTTP 메서드, ResponseEntity |
+| [Phase 3: 계층 분리](docs/phase3-layered-architecture.md) | Service 계층, Request DTO, SRP, DIP |
+| [Phase 4: 예외 처리 & 검증](docs/phase4-exception-validation.md) | @Valid, @RestControllerAdvice, 커스텀 예외, ErrorResponse |
